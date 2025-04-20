@@ -92,6 +92,7 @@ public class RegistrationService {
     public CompletableFuture<Void> sendOtpEmailAsync(RequestToSendEmailDto requestToSendEmailDto) {
         return CompletableFuture.runAsync(() -> {
             String result = mailSenderService.sendSimpleMessage(requestToSendEmailDto);
+            log.info("Result of sending email: {} ", result);
             if (!"OK".equals(result)) {
                 throw new ApiException("Проблема отправки OTP-кода попробуйте еще раз");
             }

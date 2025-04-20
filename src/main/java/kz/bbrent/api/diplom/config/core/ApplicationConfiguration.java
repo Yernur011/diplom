@@ -17,14 +17,15 @@ import java.util.Properties;
 @EnableCaching
 @Configuration
 public class ApplicationConfiguration {
+
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("iamtilegenov@gmail.com");
-        mailSender.setPassword("ytzn rcja ghsg qjvm");
+        mailSender.setUsername("tka99.ru@gmail.com");
+        mailSender.setPassword("spal ywso rwux fsof");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
@@ -32,6 +33,7 @@ public class ApplicationConfiguration {
         props.put("mail.smtp.starttls.enable", "true");
         return mailSender;
     }
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
